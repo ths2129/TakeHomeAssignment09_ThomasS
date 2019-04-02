@@ -12,18 +12,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="today" />
+        android:text="today"
+        android:textColor="@color/red"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/text_view_information"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Information"
-        android:gravity="center"/>
+        <TextView
+            android:id="@+id/text_view_information"
+            style="@style/order"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Information" />
 
     </LinearLayout>
 
@@ -31,23 +32,22 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:gravity="center|bottom">
+        android:gravity="center|bottom"
+        android:orientation="horizontal">
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Set"
             android:onClick="SetHalal"
-            />
+            android:text="Set" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="AddHalal"
-            android:text="Add"/>
+            android:text="Add" />
 
     </LinearLayout>
 

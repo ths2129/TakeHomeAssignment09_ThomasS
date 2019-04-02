@@ -41,13 +41,13 @@ public class SecondActivity extends AppCompatActivity {
 
         halalRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            public void onDataChange(DataSnapshot dataSnapshot) {
                 HalalCart halal = dataSnapshot.getValue(HalalCart.class);
                 displayDetails.setText(halal.toString());
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+            public void onCancelled(DatabaseError databaseError) {
                 Toast.makeText(SecondActivity.this, "No halal for you", Toast.LENGTH_SHORT).show();
             }
         });
@@ -56,6 +56,12 @@ public class SecondActivity extends AppCompatActivity {
 
     public void SetHalal(View view) {
         halalRef.setValue(new HalalCart("Chicken over rice", 6, true, true));
+        Toast.makeText(this, "First Order", Toast.LENGTH_SHORT).show();
+    }
+
+    public void AddHalal(View view){
+        mySecondHalal.setValue(new HalalCart("Chicken on a stick", 3, false, false));
+        Toast.makeText(this, "Another Order", Toast.LENGTH_SHORT).show();
 
     }
 
