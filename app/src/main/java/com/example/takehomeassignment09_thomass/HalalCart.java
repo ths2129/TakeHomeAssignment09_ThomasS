@@ -19,11 +19,11 @@ public class HalalCart {
 
     @Override
     public String toString() {
-        return "HalalCart Order" + "\n" +
+        return "Halal Cart Order" + "\n" +
                 "Item: " + item + "\n" +
                 "Price: $" + price + "\n" +
-                "WhiteSauce: " + whiteSauce + "\n" +
-                "RedSauce: " + redSauce;
+                "White Sauce: " + whiteSauce + "\n" +
+                "Red Sauce: " + redSauce;
     }
 
 

@@ -23,6 +23,7 @@ public class SecondActivity extends AppCompatActivity {
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference halalRef = database.getReference("Main order");
     private DatabaseReference mySecondHalal = database.getReference("Another Order");
+    private DatabaseReference myThirdHalal = database.getReference("last Order");
 
 
     @Override
@@ -31,7 +32,7 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
         Toast.makeText(this, "Your Order", Toast.LENGTH_LONG).show();
 
-        Calendar calendar = Calendar.getInstance(); //has current date
+        Calendar calendar = Calendar.getInstance(); //has current date - single reference to object
         String today = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());//save date in String
 
         TextView dateView = findViewById(R.id.text_view_today);
@@ -59,10 +60,14 @@ public class SecondActivity extends AppCompatActivity {
         Toast.makeText(this, "First Order", Toast.LENGTH_SHORT).show();
     }
 
-    public void AddHalal(View view){
+    public void AddHalal(View view) {
         mySecondHalal.setValue(new HalalCart("Chicken on a stick", 3, false, false));
         Toast.makeText(this, "Another Order", Toast.LENGTH_SHORT).show();
+    }
 
+    public void AddThird(View view) {
+        myThirdHalal.setValue(new HalalCart("Hot dog", 2, false, false));
+        Toast.makeText(this, "A third Order", Toast.LENGTH_SHORT).show();
     }
 
 }
